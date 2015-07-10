@@ -67,12 +67,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.repos', {
+    url: '/repos',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'tab-repos': {
+        templateUrl: 'templates/tab-repos.html',
+        controller: 'ReposCtrl'
       }
     }
   });

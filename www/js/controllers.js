@@ -10,7 +10,7 @@ angular.module('starter.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-  
+
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);
@@ -21,8 +21,23 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+.controller('ReposCtrl', function($scope, $http) {
+  $scope.repoArr = [];
+  $http.get('https://api.github.com/search/repositories?q=stars:%3E=500&page=1&language=javascript&order=stars')
+    .success(function(data) {
+      $scope.repos = data;
+      $.each(data.items, function(repoIndex, repo) {
+        $scope.repoArr.push({
+          name: repo.name,
+          avatar: repo.owner.avatar_url,
+          description: repo.description,
+          homepage: repo.homepage,
+          repoUrl: repo.html_url,
+          language: repo.language,
+          stars: repo.stargazers_count,
+          created: repo.created_at,
+          updated: repo.updated_at
+        });
+      });
+    });
 });
