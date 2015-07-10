@@ -7,7 +7,7 @@
 .repo img {
   height: 69px;
   position: relative;
-  right: -165px;
+  right: -166px;
   top: 0px;
   border: 1px solid #ddd;
 }
@@ -20,10 +20,15 @@
   left: 239px;
   top: 16px;
   display: inline-block;
+  width: 69px;
 }
 
 .stars * {
   display: inline-block;
+}
+
+.stars h3 {
+  font-size: 12px;
 }
 
 .descr, .dates, .links {
