@@ -1,0 +1,25 @@
+<ion-view view-title="Top GitHub JavaScript Repos">
+  <ion-content>
+    <ul>
+      <li class="repo" ng-repeat="repo in repoArr">
+        <div class="card">
+          <div class="item item-text-wrap">
+            <div class="item item-divider">
+              <h1>{{repo.name}}</h1>
+            </div>
+            <div class="stars">
+              <h3>{{repo.stars}}</h3>
+              <i class="ion-star"></i>
+            </div>
+            <img src={{repo.avatar}}>
+            <p class="descr">{{repo.description}}</p>
+            <p class="dates">Created {{repo.created}}</p>
+            <p class="dates">Updated {{repo.updated}}</p>
+            <a class="links" href={{repo.homepage}}><span>Homepage</span></a>
+            <a class="links" href={{repo.repoUrl}}><span>Repo</span></a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </ion-content>
+</ion-view>
